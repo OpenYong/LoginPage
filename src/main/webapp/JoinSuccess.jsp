@@ -21,7 +21,7 @@
 	<%
 	
 	request.setCharacterEncoding("utf-8");
-	String uName = request.getParameter("uName"); // input.jsp���� ���λ��� 媛��ㅼ�� 諛����듬����.
+	String uName = request.getParameter("uName"); // 
 	String uId = request.getParameter("uId");
 	String pass = request.getParameter("pass");
 	String bd = request.getParameter("bd");
@@ -33,12 +33,12 @@
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		String url = "jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf8"; // ��源� ���������� 留�李ш�吏�濡� url�� �ㅼ����二�
+		String url = "jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf8"; // 
 		Connection con = DriverManager.getConnection(url, "root", "dyddus29!");
-		String sql = "INSERT INTO userInfo(uName,uId,pass,bd,address,uTel) VALUES(?,?,?,?,?,?)"; // sql臾� ����(id�� name, pwd媛��ㅼ�� 蹂대�닿린���� ����)
+		String sql = "INSERT INTO userInfo(uName,uId,pass,bd,address,uTel) VALUES(?,?,?,?,?,?)"; // 
 		PreparedStatement pstmt = con.prepareStatement(sql);
 
-		pstmt.setString(1,uName); // values�� �ㅼ�닿� 媛�媛��� id, name, pwd �ㅼ��
+		pstmt.setString(1,uName); // 
 		pstmt.setString(2,uId);
 		pstmt.setString(3,pass);
 		pstmt.setString(4,bd);
@@ -46,13 +46,13 @@
 		pstmt.setString(6,uTel);
 		
 
-		pstmt.executeUpdate(); // sql臾� �ㅽ��(����異�媛� �ㅽ��)
+		pstmt.executeUpdate(); // 
 		pstmt.close();
 		con.close();
-		
+		response.sendRedirect("index.jsp");
 	}
 
-	catch(ClassNotFoundException e) // ���몄�由�
+	catch(ClassNotFoundException e) // 
 	{
 		out.println(e);
 	}

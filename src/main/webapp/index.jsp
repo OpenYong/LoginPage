@@ -11,6 +11,7 @@
 <body>
 	<jsp:useBean id="recv" class="Pack.User" scope="page"/>
 	<jsp:setProperty name="recv" property="uId" />
+	<jsp:setProperty name="recv" property="infoCheck" />
 	
 	<form method=POST action="loginSQL.jsp">
 		<table width="270" border="1" cellpadding="5">
@@ -20,7 +21,9 @@
 			<tr>
 				<td>아이디</td>
 				<td>
-				<input type="text" name="uId" placeholder="아이디" required>
+				<input required type="text" name="uId" placeholder="아이디" value = "<%=
+				(recv.getuId() == null) ? "" : recv.getuId()
+				 %>" >
 				</td>
 			</tr>
 			<tr>
@@ -32,8 +35,9 @@
 			<tr>
 				<td colspan="2" style ="color:red">
 					<%
-						String uId = recv.getuId();
-						if(uId != null){
+						Boolean infoCheck = recv.getInfoCheck();
+						String uid = recv.getuId();
+						if(infoCheck){
 							out.print("아이디 또는 비밀번호가 틀렸습니다.");
 						}
 					%>

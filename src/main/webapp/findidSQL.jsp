@@ -44,7 +44,7 @@
 			String uId = result.getString(1);
 			if (uId != null) { %>
 				<h1>아이디는 <%=  uId %> 입니다.</h1>
-				<a href="index.jsp">로그인 하기</a>
+				<a href="index.jsp?uId=<%= uId %>">로그인 하기</a>
 				<a href="findpass.jsp">비밀번호 찾기</a>
 	<%
 	}

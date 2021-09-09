@@ -16,6 +16,7 @@
 	<%
 		String uId = recv.getuId();
 			String pass = recv.getPass();
+			Boolean infoCheck = recv.getInfoCheck();
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet result = null;
@@ -38,7 +39,8 @@
 					if (match.equals("1")) {
 						response.sendRedirect("success.jsp?uId=" + request.getParameter("uId"));
 					} else {
-						response.sendRedirect("index.jsp?uId=" + request.getParameter("uId"));
+						infoCheck = true;
+						response.sendRedirect("index.jsp?uId=" + request.getParameter("uId")+"&"+"infoCheck="+infoCheck);
 					}
 				}
 

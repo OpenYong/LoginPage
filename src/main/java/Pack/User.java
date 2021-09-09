@@ -8,6 +8,7 @@ public class User {
 	String bd;
 	String address;
 	String uTel;
+	Boolean infoCheck = false;
 	public User() {
 	};
 	public String getuName() { return uName; }
@@ -22,4 +23,6 @@ public class User {
 	public void setAddress(String address) { this.address = address; }
 	public String getuTel() { return uTel; }
 	public void setuTel(String uTel) { this.uTel = uTel; }
+	public Boolean getInfoCheck() { return infoCheck; }
+	public void setInfoCheck(Boolean infoCheck) { this.infoCheck = infoCheck; }	
 }

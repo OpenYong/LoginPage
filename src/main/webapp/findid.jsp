@@ -22,9 +22,9 @@
 				<input type = "submit" value = "찾기"><br>
 				
 				<% String uId = recv.getuId();
-					if(uId != null){
-					out.print("일치하는 회원정보가 없습니다.");
-				} %>
+					if(uId != null){ %>
+						<p style="color:red;">일치하는 회원정보가 없습니다</p>
+				<% } %>
 			</form>
 		</fieldset>
 		<a href="index.jsp">로그인 하기</a>

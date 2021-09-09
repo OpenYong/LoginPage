@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="Pack.User"%>
@@ -21,7 +21,7 @@
 	<%
 	
 	request.setCharacterEncoding("utf-8");
-	String uName = request.getParameter("uName"); // input.jsp에서 입력받은 값들을 받아옵니다.
+	String uName = request.getParameter("uName"); // input.jsp���� ���λ��� 媛��ㅼ�� 諛����듬����.
 	String uId = request.getParameter("uId");
 	String pass = request.getParameter("pass");
 	String bd = request.getParameter("bd");
@@ -33,12 +33,12 @@
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		String url = "jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf8"; // 아까 예제에서와 마찬가지로 url을 설정하죠
-		Connection con = DriverManager.getConnection(url, "root", "1234");
-		String sql = "INSERT INTO userInfo(uName,uId,pass,bd,address,uTel) VALUES(?,?,?,?,?,?)"; // sql문 작성(id와 name, pwd값들을 보내기위한 작업)
+		String url = "jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf8"; // ��源� ���������� 留�李ш�吏�濡� url�� �ㅼ����二�
+		Connection con = DriverManager.getConnection(url, "root", "dyddus29!");
+		String sql = "INSERT INTO userInfo(uName,uId,pass,bd,address,uTel) VALUES(?,?,?,?,?,?)"; // sql臾� ����(id�� name, pwd媛��ㅼ�� 蹂대�닿린���� ����)
 		PreparedStatement pstmt = con.prepareStatement(sql);
 
-		pstmt.setString(1,uName); // values에 들어갈 각각의 id, name, pwd 설정
+		pstmt.setString(1,uName); // values�� �ㅼ�닿� 媛�媛��� id, name, pwd �ㅼ��
 		pstmt.setString(2,uId);
 		pstmt.setString(3,pass);
 		pstmt.setString(4,bd);
@@ -46,13 +46,13 @@
 		pstmt.setString(6,uTel);
 		
 
-		pstmt.executeUpdate(); // sql문 실행(회원추가 실행)
+		pstmt.executeUpdate(); // sql臾� �ㅽ��(����異�媛� �ㅽ��)
 		pstmt.close();
 		con.close();
 		
 	}
 
-	catch(ClassNotFoundException e) // 예외처리
+	catch(ClassNotFoundException e) // ���몄�由�
 	{
 		out.println(e);
 	}
@@ -62,32 +62,5 @@
 	}
 		
 	%>
-
-
-	
-	
-	
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ page import="Pack.User" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-	<jsp:useBean id="recv" class="Pack.User" scope="page"></jsp:useBean>
-	<jsp:setProperty property="*" name="recv"/>
-	
-	<jsp:getProperty property="uName" name="recv"/>
-	<jsp:getProperty property="uId" name="recv"/>
-	<jsp:getProperty property="pass" name="recv"/>
-	<jsp:getProperty property="address" name="recv"/>
-	<jsp:getProperty property="bd" name="recv"/>
-	<jsp:getProperty property="uTel" name="recv"/>
-
->>>>>>> b1aec4d2cdfae37031aa100e2946bec2fe5ff51f
 </body>
 </html>

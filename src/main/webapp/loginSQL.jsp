@@ -23,7 +23,7 @@
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				String url = "jdbc:mysql://localhost/db01";
-				conn = DriverManager.getConnection(url, "root", "1234");
+				conn = DriverManager.getConnection(url, "root", "dyddus29!");
 				// ¿¬°á ³¡
 				out.print(1);
 				String sql = "SELECT COUNT(*) AS CNT FROM USERINFO WHERE UID = ? AND PASS = ?";

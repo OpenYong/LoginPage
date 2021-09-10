@@ -19,8 +19,8 @@
 				<label>이름    : </label>
 				<input type = "text" name ="uName" required><br>
 				<input type = "submit" value = "찾기"><br>
-								<% String uId = recv.getuId();
-					if(uId != null){ %>
+				<% String uId = (recv.getuId() == null) ? "" : recv.getuId();
+					if(uId != ""){ %>
 					<p style="color:red;">일치하는 회원정보가 없습니다</p>
 				<% } %>
 			</form>

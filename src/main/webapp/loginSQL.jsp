@@ -37,10 +37,10 @@
 				if (result.next()) {
 					String match = result.getString("CNT");
 					if (match.equals("1")) {
-						response.sendRedirect("success.jsp?uId=" + request.getParameter("uId"));
+						response.sendRedirect("success.jsp?uId=" + uId);
 					} else {
 						infoCheck = true;
-						response.sendRedirect("index.jsp?uId=" + request.getParameter("uId")+"&"+"infoCheck="+infoCheck);
+						response.sendRedirect("index.jsp?uId=" + uId+"&infoCheck="+infoCheck);
 					}
 				}
 

@@ -10,6 +10,7 @@
 <body>
 	<jsp:useBean id="recv" class="Pack.User" scope="page"></jsp:useBean>
 	<jsp:setProperty property="uId" name="recv"/>
+	
 
 	<div>
 		<fieldset >
@@ -20,9 +21,9 @@
 				<label>전화번호 : </label>
 				<input type = "text" name ="uTel" required><br>
 				<input type = "submit" value = "찾기"><br>
-				
-				<% String uId = recv.getuId();
-					if(uId != null){ %>
+				<% String uId = (recv.getuId() == null) ? "" : recv.getuId();
+				System.out.println(uId);
+					if(uId != ""){ %>
 						<p style="color:red;">일치하는 회원정보가 없습니다</p>
 				<% } %>
 			</form>

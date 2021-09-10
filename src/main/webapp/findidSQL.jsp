@@ -49,7 +49,7 @@
 	<%
 	}
 	} else {
-	response.sendRedirect("findid.jsp?uId=" + request.getParameter("uId"));
+	response.sendRedirect("findid.jsp?uId=" + recv.getuId());
 	}
 
 	pstmt.close();
